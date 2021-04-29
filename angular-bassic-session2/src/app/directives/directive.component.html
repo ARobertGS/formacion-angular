@@ -1,0 +1,36 @@
+<h2 *ngIf="this.linkList.length === 0">No se encontraron datos</h2>
+<h2 *ngIf="this.linkList.length > 0">ngFor & ngIf</h2>
+
+<!-- <h2 *ngIf="this.linkList.length > 0; else elseDiv">ngFor & ngIf</h2>
+<ng-template #elseDiv>
+  <h2 >No se encontraron datos</h2>
+</ng-template> -->
+
+<ul>
+    <li *ngFor="let link of this.linkList">
+        <h2><a target="_blank" rel="noopener" class="{{link.className}}" href="{{link.href}}">{{link.text}}</a></h2>
+    </li>
+</ul>
+
+<h2>ngSwitch</h2>
+<ul [ngSwitch]="this.linkSwitch.type">
+<li *ngSwitchCase="typeLinkEnum.PRIMARY">
+  <h2><a target="_blank" class="badge badge-primary" rel="noopener" href="https://angular.io/tutorial">{{linkSwitch.text}}</a></h2>
+</li>
+<li *ngSwitchCase="typeLinkEnum.SUCCESS">
+  <h2><a target="_blank" class="badge badge-success" rel="noopener" href="https://angular.io/cli">{{linkSwitch.text}}</a></h2>
+</li>
+<li *ngSwitchCase="typeLinkEnum.DANGER">
+  <h2><a target="_blank" class="badge badge-danger" rel="noopener" href="https://blog.angular.io/">{{linkSwitch.text}}</a></h2>
+</li>
+</ul>
+
+<h2>ngClass</h2>
+<button type="button" class="btn btn-primary" (click)="changeClassName()">Cambiar clase</button>
+<button type="button" [ngClass]="classNameButtonString">Dark</button>
+<button type="button" [ngClass]="classNameButtonArray">Dark</button>
+<button type="button" [ngClass]="classNameButtonObject">Dark</button>
+
+<h2>ngStyle</h2>
+<button type="button" class="btn btn-primary" (click)="changeStyle()">Cambiar Estilo</button>
+<button type="button" [ngStyle]="styleButton">Dark</button>

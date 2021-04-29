@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+[
+    {
+        "id": 1,
+        "first": "Daniel",
+        "last": "Perez",
+        "email": "rperez@everis.com",
+        "status": "1"
+    },
+    {
+        "id": 2,
+        "first": "Carlos",
+        "last": "Diaz",
+        "email": "cdiaz@everis.com",
+        "status": "1"
+    },
+    {
+        "id": 3,
+        "first": "Brenda",
+        "last": "Lopez",
+        "email": "blopez@everis.com",
+        "status": "0"
+    }
+]
