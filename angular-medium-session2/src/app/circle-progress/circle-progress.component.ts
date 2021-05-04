@@ -21,7 +21,7 @@ export class CircleProgressComponent implements OnInit {
         this._percentCircleProgress = value;
 
 
-        if(value === 30) {
+        if(value === 90) {
             this.stopSupply.emit({
                 stop: true,
                 message: 'Circle Progress Detenido'
