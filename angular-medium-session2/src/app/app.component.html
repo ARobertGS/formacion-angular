@@ -16,6 +16,10 @@
 <div class="supplyPercent" *ngIf="this.stopSupplyFromCircleProgress">
   Suministro Detenido por el hijo
 </div>
-<div class="supplyPercent" *ngIf="!this.supplyCompleteFromCircleProgress">
+<div class="supplyPercent" *ngIf="!this.stopSupplyFromCircleProgress">
   Suministro en curso
+</div>
+
+<div class="container-course">
+  <everis-course></everis-course>
 </div>
