@@ -1,1 +1,39 @@
-course
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nombre</th>
+        <th scope="col">Fecha de inicio</th>
+        <th scope="col">Fecha Fin</th>
+        <th scope="col">Dias</th>
+        <th scope="col">Horas por dia</th>
+        <th scope="col">Detalle del curso</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of this.courseList">
+        <th scope="row">{{course.id}}</th>
+        <td>{{course.name}}</td>
+        <td>{{course.dateInit | customDate}}</td>
+        <td>{{course.dateEnd | customDate}}</td>
+        <td>{{course.days}}</td>
+        <td>{{course.hoursPerDay}}</td>
+        <td><div [ngbTooltip]="course.courseDetail">{{course.courseDetail | truncate : 50 : '...' }}</div></td>
+        <td>{{course.price | customCurrency}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form>
+    <div class="form-group">
+      <label for="inputOnlyNumber">Ingrese un numero entero</label>
+      <!-- <textarea type="text" onlyNumber class="form-control" id="inputOnlyNumber" aria-describedby="emailHelp" placeholder="Ingrese un numero entero"></textarea> -->
+      <input type="text" onlyNumber class="form-control" id="inputOnlyNumber" aria-describedby="emailHelp" placeholder="Ingrese un numero entero">
+    </div>
+    <!-- <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div> -->
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+  </form>
