@@ -2,15 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CircleProgressComponent } from './circle-progress/circle-progress.component';
+import { CircleProgressOptions, NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CircleProgressComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgCircleProgressModule,
   ],
-  providers: [],
+  providers: [
+    CircleProgressOptions,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
